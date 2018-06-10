@@ -5,18 +5,18 @@ import AudioKit
 
 class ViewController: UIViewController {
 
-	private var recordUrl:URL?
+	private var recordUrl:URL!
 	private var isRecording:Bool = false
 	
-	public var player:AKPlayer?
+	public var player:AKPlayer!
 	private let format = AVAudioFormat(commonFormat: .pcmFormatFloat64, sampleRate: 44100, channels: 2, interleaved: true)!
 	
-	private var amplitudeTracker:AKAmplitudeTracker?
-	private var boostedMic:AKBooster?
-	private var mic:AKMicrophone?
-	private var micMixer:AKMixer?
-	private var silence:AKBooster?
-	public var recorder: AKNodeRecorder?
+	private var amplitudeTracker:AKAmplitudeTracker!
+	private var boostedMic:AKBooster!
+	private var mic:AKMicrophone!
+	private var micMixer:AKMixer!
+	private var silence:AKBooster!
+	public var recorder: AKNodeRecorder!
 	
 	@IBOutlet weak var recordButton: UIButton!
 	
@@ -75,8 +75,8 @@ class ViewController: UIViewController {
 
 				self.recorder = try AKNodeRecorder(node: self.micMixer, file: audioFile)
 
-				try self.recorder?.reset()
-				try self.recorder?.record()
+				try self.recorder.reset()
+				try self.recorder.record()
 				} catch {
 					print("error setting up recording", error)
 				}
@@ -85,8 +85,8 @@ class ViewController: UIViewController {
 	}
 	
 	func stopRecording() {
-		recorder?.stop()
-		startAudioPlayback(url: self.recordUrl!)
+		recorder.stop()
+		startAudioPlayback(url: self.recordUrl)
 	}
 	
 	@IBAction func saveToDisk(_ sender: Any) {
@@ -106,7 +106,7 @@ class ViewController: UIViewController {
 			
 			// PROBLEM STARTS HERE //
 			
-			self.startAudioPlayback(url: self.recordUrl!)
+			self.startAudioPlayback(url: self.recordUrl)
 			
 		}
 	}
@@ -118,18 +118,17 @@ class ViewController: UIViewController {
 		do {
 			try AKSettings.setSession(category: .playback)
 			player = AKPlayer.init()
-			try player?.load(url: url)
+			try player.load(url: url)
 		}
 		catch {
 			print("error setting up audio playback", error)
 			return
 		}
 		
-		player?.prepare()
-		player?.isLooping = true
+		player.prepare()
+		player.isLooping = true
 		self.setPitch(pitch: self.getPitch(), saveValue: false)
 		AudioKit.output = player
-		
 		
 		startEngine()
 		startPlayer()
@@ -137,7 +136,7 @@ class ViewController: UIViewController {
 	
 	
 	public func startPlayer() {
-		if AudioKit.engine.isRunning { self.player?.play() }
+		if AudioKit.engine.isRunning { self.player.play() }
 		else { print("audio engine not running, can't play") }
 	}
 	
@@ -157,22 +156,14 @@ class ViewController: UIViewController {
 			print("stopping engine")
 			do {
 				try AudioKit.stop()
-				
 			}
 			catch {
 				print("error stopping audio", error)
 			}
 		}
-		//AudioKit.output = nil
 		
-		player = nil
+		//playback doesn't work without this?
 		mic = nil
-		recorder = nil
-		micMixer = nil
-		boostedMic = nil
-		amplitudeTracker = nil
-		silence = nil
-		player = nil
 	}
 	
 	@IBAction func changePitch(_ sender: UISlider) {
@@ -184,7 +175,7 @@ class ViewController: UIViewController {
 	}
 	
 	public func setPitch(pitch:Double, saveValue:Bool = true) {
-		player?.pitch = pitch * 1000.0
+		player.pitch = pitch * 1000.0
 		if saveValue {
 			UserDefaults.standard.set(pitch, forKey: "pitchFactor")
 			UserDefaults.standard.synchronize()
