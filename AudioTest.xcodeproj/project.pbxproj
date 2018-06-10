@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2F5F3F65C1A17DB0CA55525 /* Pods_AudioTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 476848F048029571A1D38E2F /* Pods_AudioTest.framework */; };
 		CABBD8BF20CDC4460084A1E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABBD8BE20CDC4460084A1E0 /* AppDelegate.swift */; };
 		CABBD8C120CDC4460084A1E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABBD8C020CDC4460084A1E0 /* ViewController.swift */; };
 		CABBD8C420CDC4460084A1E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABBD8C220CDC4460084A1E0 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		476848F048029571A1D38E2F /* Pods_AudioTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudioTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9770C05D8E97ECFEA2CDD557 /* Pods-AudioTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-AudioTest/Pods-AudioTest.release.xcconfig"; sourceTree = "<group>"; };
 		CABBD8BB20CDC4460084A1E0 /* AudioTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CABBD8BE20CDC4460084A1E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CABBD8C020CDC4460084A1E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		CABBD8C520CDC4470084A1E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CABBD8C820CDC4470084A1E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CABBD8CA20CDC4470084A1E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB38D5A7731FFF353078252A /* Pods-AudioTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AudioTest/Pods-AudioTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2F5F3F65C1A17DB0CA55525 /* Pods_AudioTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		74A164E9B8E3DCEDD93068B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CB38D5A7731FFF353078252A /* Pods-AudioTest.debug.xcconfig */,
+				9770C05D8E97ECFEA2CDD557 /* Pods-AudioTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CABBD8B220CDC4460084A1E0 = {
 			isa = PBXGroup;
 			children = (
 				CABBD8BD20CDC4460084A1E0 /* AudioTest */,
 				CABBD8BC20CDC4460084A1E0 /* Products */,
+				74A164E9B8E3DCEDD93068B1 /* Pods */,
+				CD7A9BFBA7462C7945E65F42 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = AudioTest;
 			sourceTree = "<group>";
 		};
+		CD7A9BFBA7462C7945E65F42 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				476848F048029571A1D38E2F /* Pods_AudioTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CABBD8CD20CDC4470084A1E0 /* Build configuration list for PBXNativeTarget "AudioTest" */;
 			buildPhases = (
+				54480BB8DF1D24645AC73F6E /* [CP] Check Pods Manifest.lock */,
 				CABBD8B720CDC4460084A1E0 /* Sources */,
 				CABBD8B820CDC4460084A1E0 /* Frameworks */,
 				CABBD8B920CDC4460084A1E0 /* Resources */,
+				9EC0EA65EE1A3878C001A983 /* [CP] Embed Pods Frameworks */,
+				EA7DB3211D3F4443A94AD484 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		54480BB8DF1D24645AC73F6E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AudioTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EC0EA65EE1A3878C001A983 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AudioTest/Pods-AudioTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA7DB3211D3F4443A94AD484 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AudioTest/Pods-AudioTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CABBD8B720CDC4460084A1E0 /* Sources */ = {
@@ -278,15 +356,13 @@
 		};
 		CABBD8CE20CDC4470084A1E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB38D5A7731FFF353078252A /* Pods-AudioTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PNM44AC4R7;
 				INFOPLIST_FILE = AudioTest/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.2020cv.AudioTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -296,15 +372,13 @@
 		};
 		CABBD8CF20CDC4470084A1E0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9770C05D8E97ECFEA2CDD557 /* Pods-AudioTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PNM44AC4R7;
 				INFOPLIST_FILE = AudioTest/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.2020cv.AudioTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
